@@ -7,8 +7,7 @@
     "start": "node out/build.js",
     "build": "babel src --out-file out/build.js",
     "watch": "nodemon --exec babel-node -- src/index.js",
-    "test": "mocha -r @babel/register src/**/test/*.js",
-    "precommit": "pretty-quick --staged"
+    "test": "mocha -r @babel/register src/**/test/*.js"
   },
   "devDependencies": {
     "@babel/cli": "^7.0.0-beta.37",
@@ -26,5 +25,10 @@
     "nodemon": "^1.14.11",
     "prettier": "^1.10.2",
     "pretty-quick": "^1.2.1"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "pretty-quick --staged"
+    }
   }
 }
