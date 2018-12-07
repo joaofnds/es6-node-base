@@ -4,10 +4,10 @@
   "main": "out/build.js",
   "license": "MIT",
   "scripts": {
-    "start": "node out/build.js",
-    "build": "babel src --out-file out/build.js",
-    "watch": "nodemon --exec babel-node -- src/index.js",
-    "test": "mocha -r @babel/register src/**/test/*.js"
+    "start": "node build/main.js",
+    "build": "babel src -d build",
+    "watch": "nodemon --exec babel-node -- src/main.js",
+    "test": "jest"
   },
   "devDependencies": {
     "@babel/cli": "^7.2.0",
@@ -15,13 +15,14 @@
     "@babel/node": "^7.2.0",
     "@babel/preset-env": "^7.2.0",
     "@babel/register": "^7.0.0",
+    "babel-core": "7.0.0-bridge.0",
+    "babel-jest": "^23.6.0",
     "babel-plugin-module-resolver": "^3.1.1",
-    "chai": "^4.2.0",
     "eslint-config-airbnb-base": "^13.1.0",
     "eslint-config-prettier": "^3.3.0",
     "eslint-plugin-import": "^2.14.0",
     "husky": "^1.2.0",
-    "mocha": "^5.2.0",
+    "jest": "^23.6.0",
     "nodemon": "^1.18.7",
     "prettier": "^1.15.3",
     "pretty-quick": "^1.8.0"
